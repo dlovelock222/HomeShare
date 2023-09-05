@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1031623591678",
+    "firebase_url": "https://csci310-homeshare-default-rtdb.firebaseio.com",
+    "project_id": "csci310-homeshare",
+    "storage_bucket": "csci310-homeshare.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1031623591678:android:652fc03329303e694a07af",
+        "android_client_info": {
+          "package_name": "com.example.homeshare"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1031623591678-r9f5b7uqlcfl31vmhhfui50ju7dlcpcu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAJqaU42WSoAmhnvK3-N3B2AaiTndBnDKE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1031623591678-r9f5b7uqlcfl31vmhhfui50ju7dlcpcu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

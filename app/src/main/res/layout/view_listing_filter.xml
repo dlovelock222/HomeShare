@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.chip.Chip xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/Widget.MaterialComponents.Chip.Action"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:clickable="false"
+    app:chipBackgroundColor="@color/chip_color_list"
+    app:chipEndPadding="6dp"
+    app:chipIcon="@drawable/ic_round_local_drink_24"
+    app:chipIconSize="13dp"
+    app:chipMinHeight="25dp"
+    app:chipMinTouchTargetSize="25dp"
+    app:chipStartPadding="6dp"
+    app:textEndPadding="0dp"
+    app:textStartPadding="0dp" />

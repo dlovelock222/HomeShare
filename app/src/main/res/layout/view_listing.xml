@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ListingTemplate"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/round_background_light"
+    android:orientation="vertical"
+    android:paddingLeft="20sp"
+    android:paddingTop="20sp"
+    android:paddingRight="20sp"
+    android:paddingBottom="15sp"
+    app:layout_constraintStart_toStartOf="parent">
+
+    <TextView
+        android:id="@+id/address"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:ellipsize="end"
+        android:lines="3"
+        android:text="addressLine1 ---- addressLine2 ---- addressLine3 ---- addressLine4"
+        android:textColor="@color/text_primary"
+        android:textSize="13sp"
+        android:textStyle="bold" />
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/rent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0px"
+        android:layout_marginBottom="-40px"
+        android:clickable="false"
+        android:text="$"
+        android:textSize="12dp"
+        android:textStyle="bold"
+        app:chipBackgroundColor="@color/chip_color_list"
+        app:chipIcon="@drawable/ic_baseline_sports_kabaddi_24"
+        app:chipIconSize="15sp"
+        app:chipIconTint="@android:color/black"
+        app:chipMinHeight="25dp"
+        app:chipStartPadding="6dp"
+
+        />
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/maxRoommates"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="-20px"
+        android:clickable="false"
+        android:text="# / T"
+        android:textSize="12dp"
+        android:textStyle="bold"
+        app:chipBackgroundColor="@color/chip_color_list"
+        app:chipIcon="@drawable/ic_baseline_person_24"
+        app:chipIconSize="15sp"
+        app:chipIconTint="@android:color/black"
+        app:chipMinHeight="25dp"
+        app:chipStartPadding="6dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20px"
+        >
+
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-10px"
+            app:srcCompat="@drawable/ic_icons8_male_120__xxxhdpi_"
+            app:tint="@color/accent" />
+
+        <TextView
+            android:id="@+id/User"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:lines="2"
+            android:paddingLeft="5dp"
+            android:text="postedBy.name1 - postedBy.name2"
+            android:textColor="@color/text_primary_light"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:lines="3"
+        android:text="postedBy.bio1 ----- postedBy.bio2 ----- postedBy.bio3 ---- postedBy.bio4"
+        android:textColor="@color/text_secondary"
+        android:textSize="11sp" />
+
+    <com.google.android.material.chip.ChipGroup
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:paddingTop="15dp"
+        android:paddingBottom="5dp"
+        app:chipSpacingHorizontal="5dp"/>
+
+    <com.google.android.material.chip.Chip
+        style="@style/Widget.MaterialComponents.Chip.Action"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="REQUEST TO JOIN"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textSize="9dp"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:chipBackgroundColor="@color/accent"
+        app:chipIcon="@drawable/ic_baseline_send_24"
+        app:chipIconSize="15sp"
+        app:chipIconTint="@color/background"
+        app:chipStartPadding="6dp" />
+
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:lines="0"
+        android:text=""
+        android:textColor="@color/text_secondary"
+        android:textSize="11sp" />
+
+</LinearLayout>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="background">#ff1F142B</color>
+    <color name="background_light">#ff2D2240</color>
+    <color name="text_primary">#ffD8D8D8</color>
+    <color name="text_primary_light">#9E97A5</color>
+    <color name="text_secondary">#ff867c8d</color>
+    <color name="bg_chip_checked">#ffD8D7D8</color>
+    <color name="bg_chip">#ff866c8d</color>
+    <color name="accent">#ff6DFAED</color>
+    <color name="accent_secondary">#FF59A1</color>
+    <color name="accent_tertiary">#B060FF</color>
+
+    <color name="lt_background">#FAFAFA</color>
+    <color name="lt_background_light">#E8E5ED</color>
+    <color name="lt_text_primary">#101010</color>
+    <color name="lt_text_primary_light">#303030</color>
+    <color name="lt_text_secondary">#373737</color>
+    <color name="lt_bg_chip_checked">#ffD8D7D8</color>
+    <color name="lt_bg_chip">#C2B6C5</color>
+    <color name="lt_accent">#14B8CE</color>
+    <color name="lt_accent_secondary">#D51166</color>
+    <color name="lt_accent_tertiary">#6A17BC</color>
+</resources>

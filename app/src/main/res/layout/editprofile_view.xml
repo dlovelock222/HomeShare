@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".CreateListingActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="50sp"
+            android:paddingTop="50sp"
+            android:paddingRight="50sp"
+            android:paddingBottom="50sp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
+
+                <ImageView
+                    android:id="@+id/ListingBack"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:onClick="backToMain"
+                    android:scaleX="1.1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_baseline_arrow_back_24"
+                    app:tint="@color/text_secondary" />
+
+                <TextView
+                    android:id="@+id/ProfileTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="sans-serif-black"
+                    android:text="Edit Profile"
+                    android:textColor="@color/text_primary"
+                    android:textSize="25sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ListingBack" />
+
+                <LinearLayout
+                    android:id="@+id/ListingForm"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:divider="@drawable/divider_vertical_small"
+                    android:orientation="vertical"
+                    android:showDividers="middle"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ProfileTitle">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <EditText
+                            android:id="@+id/EditProfileName"
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:background="@drawable/round_background_light"
+                            android:ems="10"
+                            android:hint="Mr. Chao"
+                            android:paddingStart="50sp"
+                            android:paddingTop="25sp"
+                            android:paddingEnd="25sp"
+                            android:paddingBottom="10sp"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/text_primary"
+                            android:textColorHint="@color/text_secondary"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="50dp"
+                            android:layout_marginTop="10dp"
+                            android:text="NAME"
+                            android:textColor="@color/text_primary"
+                            android:textSize="10sp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginTop="16dp"
+                            android:scaleX="0.8"
+                            android:scaleY="0.8"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/ic_baseline_pin_drop_24"
+                            app:tint="@color/text_secondary" />
+
+                        <ImageView
+                            android:id="@+id/EditProfileNameValid"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="20dp"
+                            android:layout_marginBottom="10dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="@+id/EditProfileName"
+                            app:srcCompat="@drawable/ic_baseline_check_24"
+                            app:tint="@color/accent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="match_parent">
+
+                        <EditText
+                            android:id="@+id/EditProfileInstagram"
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:background="@drawable/round_background_light"
+                            android:ems="10"
+                            android:hint="chaowang"
+                            android:inputType="date"
+                            android:paddingStart="50sp"
+                            android:paddingTop="25sp"
+                            android:paddingRight="25sp"
+                            android:paddingBottom="10sp"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/text_primary"
+                            android:textColorHint="@color/text_secondary"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="50dp"
+                            android:layout_marginTop="10dp"
+                            android:text="INSTAGRAM"
+                            android:textColor="@color/text_primary"
+                            android:textSize="10sp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/imageView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginTop="16dp"
+                            android:scaleX="0.8"
+                            android:scaleY="0.8"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/ic_baseline_nights_stay_24"
+                            app:tint="@color/text_secondary" />
+
+                        <ImageView
+                            android:id="@+id/EditProfileInstagramValid"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="20dp"
+                            android:layout_marginBottom="10dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="@+id/EditProfileInstagram"
+                            app:srcCompat="@drawable/ic_baseline_check_24"
+                            app:tint="@color/accent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="fill_parent">
+
+                        <EditText
+                            android:id="@+id/ListingDescription"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/round_background_light"
+                            android:ems="10"
+                            android:gravity="start"
+                            android:hint="Steve Jobs was the Co-Founder of Apple..."
+                            android:imeOptions="actionDone"
+                            android:inputType="textMultiLine"
+                            android:lines="5"
+                            android:nextFocusRight="@id/AuthCreateInstagram"
+                            android:nextFocusDown="@id/AuthCreateInstagram"
+                            android:nextFocusForward="@id/AuthCreateInstagram"
+                            android:paddingStart="50sp"
+                            android:paddingTop="25sp"
+                            android:paddingEnd="50sp"
+                            android:paddingBottom="10sp"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/text_primary"
+                            android:textColorHint="@color/text_secondary"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="50dp"
+                            android:layout_marginTop="10dp"
+                            android:text="BIOGRAPHY"
+                            android:textColor="@color/text_primary"
+                            android:textSize="10sp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginTop="16dp"
+                            android:paddingLeft="4sp"
+                            android:paddingRight="4sp"
+                            android:scaleX="1.15"
+                            android:text="+"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/EditProfileBioValid"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="24dp"
+                            android:layout_marginEnd="20dp"
+                            app:layout_constraintEnd_toEndOf="@+id/ListingDescription"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/ic_baseline_check_24"
+                            app:tint="@color/accent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="sans-serif-black"
+                        android:text="Gender"
+                        android:textColor="@color/text_primary"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:divider="@drawable/divider_horizontal"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:showDividers="middle"
+                        tools:layout_editor_absoluteY="211dp">
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/EditProfileMale"
+                            style="@style/Widget.MaterialComponents.Chip.Action"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checkable="true"
+                            android:clickable="true"
+                            app:checkedIconVisible="false"
+                            app:chipBackgroundColor="@color/chip_color_list"
+                            app:chipEndPadding="6dp"
+                            app:chipIcon="@drawable/ic_icons8_male_120__xxxhdpi_"
+                            app:chipStartPadding="6dp"
+                            app:textEndPadding="0dp"
+                            app:textStartPadding="0dp" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/EditProfileFemale"
+                            style="@style/Widget.MaterialComponents.Chip.Action"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checkable="true"
+                            android:clickable="true"
+                            app:checkedIconVisible="false"
+                            app:chipBackgroundColor="@color/chip_color_list"
+                            app:chipEndPadding="6dp"
+                            app:chipIcon="@drawable/ic_icons8_female_120__xxxhdpi_"
+                            app:chipStartPadding="6dp"
+                            app:textEndPadding="0dp"
+                            app:textStartPadding="0dp" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/EditProfileOther"
+                            style="@style/Widget.MaterialComponents.Chip.Action"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checkable="true"
+                            android:clickable="true"
+                            app:checkedIconVisible="false"
+                            app:chipBackgroundColor="@color/chip_color_list"
+                            app:chipEndPadding="6dp"
+                            app:chipIcon="@drawable/ic_icons8_neuter_120__xxxhdpi_"
+                            app:chipStartPadding="6dp"
+                            app:textEndPadding="0dp"
+                            app:textStartPadding="0dp" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:layout_weight="1"
+                        android:fontFamily="sans-serif-black"
+                        android:text="Preferences"
+                        android:textColor="@color/text_primary"
+                        android:textStyle="bold" />
+
+                    <com.google.android.material.chip.ChipGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/EditProfileAlcoholic"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:checkable="true"
+                            android:text="Alcoholic"
+                            app:checkedIconVisible="false"
+                            app:chipBackgroundColor="@color/chip_color_list"
+                            app:chipIcon="@drawable/ic_round_local_drink_24"
+                            app:chipSurfaceColor="@color/text_secondary" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/EditProfileSmoker"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:checkable="true"
+                            android:text="Smoker"
+                            app:checkedIconVisible="false"
+                            app:chipBackgroundColor="@color/chip_color_list"
+                            app:chipIcon="@drawable/ic_baseline_smoking_rooms_24"
+                            app:chipSurfaceColor="@color/text_secondary" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/EditProfileSocial"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:checkable="true"
+                            android:text="Social"
+                            app:checkedIconVisible="false"
+                            app:chipBackgroundColor="@color/chip_color_list"
+                            app:chipIcon="@drawable/ic_baseline_sports_kabaddi_24"
+                            app:chipSurfaceColor="@color/text_secondary" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/EditProfileNightOwl"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:checkable="true"
+                            android:text="Night Owl"
+                            app:checkedIconVisible="false"
+                            app:chipBackgroundColor="@color/chip_color_list"
+                            app:chipIcon="@drawable/ic_baseline_nights_stay_24"
+                            app:chipSurfaceColor="@color/text_secondary" />
+                    </com.google.android.material.chip.ChipGroup>
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/EditProfileSubmit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="12dp"
+                    android:backgroundTint="@color/accent"
+                    android:focusable="false"
+                    android:fontFamily="sans-serif-medium"
+                    android:onClick="submitChanges"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="10dp"
+                    android:paddingRight="20dp"
+                    android:paddingBottom="10dp"
+                    android:text="Save Changes"
+                    android:textColor="@color/background"
+                    app:cornerRadius="70sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ListingForm" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

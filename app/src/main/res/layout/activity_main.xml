@@ -1,0 +1,836 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".MainActivity">
+
+    <ScrollView
+        android:id="@+id/DiscoverView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="60dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/DiscoverTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="46dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="30dp"
+                android:text="Discover"
+                android:textColor="@color/text_primary"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/CreateListingButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:backgroundTint="@color/accent_tertiary"
+                android:onClick="CreateListing"
+                android:text="Create New Listing"
+                android:textColor="@color/background" />
+
+            <TextView
+                android:id="@+id/FilterTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="30dp"
+                android:text="Filters"
+                android:textColor="@color/text_secondary"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingBottom="0sp"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.chip.ChipGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingLeft="30sp"
+                        android:paddingRight="30sp">
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/AlcoholChip"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checkable="true"
+                            android:onClick="userQueriedUpdateListings"
+                            android:text="Alcoholic"
+                            app:checkedIconVisible="false"
+                            app:chipBackgroundColor="@color/chip_color_list"
+                            app:chipIcon="@drawable/ic_round_local_drink_24"
+                            app:chipSurfaceColor="@color/text_secondary" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/SmokerChip"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checkable="true"
+                            android:onClick="userQueriedUpdateListings"
+                            android:text="Smoker"
+                            app:checkedIconVisible="false"
+                            app:chipBackgroundColor="@color/chip_color_list"
+                            app:chipIcon="@drawable/ic_baseline_smoking_rooms_24"
+                            app:chipSurfaceColor="@color/text_secondary" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/SocialChip"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checkable="true"
+                            android:onClick="userQueriedUpdateListings"
+                            android:text="Social"
+                            app:checkedIconVisible="false"
+                            app:chipBackgroundColor="@color/chip_color_list"
+                            app:chipIcon="@drawable/ic_baseline_sports_kabaddi_24"
+                            app:chipSurfaceColor="@color/text_secondary" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/NightOwlChip"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checkable="true"
+                            android:onClick="userQueriedUpdateListings"
+                            android:text="Night Owl"
+                            app:checkedIconVisible="false"
+                            app:chipBackgroundColor="@color/chip_color_list"
+                            app:chipIcon="@drawable/ic_baseline_nights_stay_24"
+                            app:chipSurfaceColor="@color/text_secondary" />
+
+                    </com.google.android.material.chip.ChipGroup>
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingBottom="0sp"
+                android:scrollbars="none">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.chip.ChipGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingLeft="30sp"
+                        android:paddingRight="30sp">
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/SmallHouseholdChip"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checkable="true"
+                            android:onClick="userQueriedUpdateListings"
+                            android:text="Roommates (0-6 People)"
+                            app:checkedIconVisible="false"
+                            app:chipBackgroundColor="@color/chip_color_list"
+                            app:chipIcon="@drawable/ic_baseline_person_search_24"
+                            app:chipSurfaceColor="@color/text_secondary" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/LargeHouseholdChip"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checkable="true"
+                            android:onClick="userQueriedUpdateListings"
+                            android:text="Roommates (7+ People)"
+                            app:checkedIconVisible="false"
+                            app:chipBackgroundColor="@color/chip_color_list"
+                            app:chipIcon="@drawable/ic_baseline_person_search_24"
+                            app:chipSurfaceColor="@color/text_secondary" />
+
+                    </com.google.android.material.chip.ChipGroup>
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingBottom="10sp"
+                android:scrollbars="none">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.chip.ChipGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingLeft="30sp"
+                        android:paddingRight="30sp">
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/CheapRent"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checkable="true"
+                            android:onClick="userQueriedUpdateListings"
+                            android:text="Less than $1000"
+                            app:checkedIconVisible="false"
+                            app:chipBackgroundColor="@color/chip_color_list"
+                            app:chipIcon="@android:drawable/stat_sys_download"
+                            app:chipIconTint="@android:color/black"
+                            app:chipSurfaceColor="@color/text_secondary" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/PriceyRent"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checkable="true"
+                            android:onClick="userQueriedUpdateListings"
+                            android:text="More than $1000"
+                            app:checkedIconVisible="false"
+                            app:chipBackgroundColor="@color/chip_color_list"
+                            app:chipIcon="@android:drawable/stat_sys_upload"
+                            app:chipIconTint="@android:color/black"
+                            app:chipSurfaceColor="@color/text_secondary" />
+
+                    </com.google.android.material.chip.ChipGroup>
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <LinearLayout
+                android:id="@+id/DiscoverLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:divider="@drawable/divider_vertical"
+                android:orientation="vertical"
+                android:paddingLeft="30sp"
+                android:paddingRight="30sp"
+                android:showDividers="middle">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Loading..."
+                    android:textAlignment="center"
+                    android:textColor="@color/text_secondary"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <ScrollView
+        android:id="@+id/InboxView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:id="@+id/InboxLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/InboxTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="30dp"
+                android:text="Inbox"
+                android:textColor="@color/text_primary"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="30dp"
+                android:text="Outgoing Invitations"
+                android:textColor="@color/text_primary_light"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:id="@+id/OutboxLinearView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:divider="@drawable/divider_vertical"
+                android:orientation="vertical"
+                android:paddingLeft="30dp"
+                android:paddingTop="30dp"
+                android:paddingRight="30dp"
+                android:showDividers="middle"></LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="30dp"
+                android:text="Incoming Invitations"
+                android:textColor="@color/text_primary_light"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:id="@+id/InboxLinearView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="80dp"
+                android:divider="@drawable/divider_vertical"
+                android:orientation="vertical"
+                android:paddingLeft="30dp"
+                android:paddingTop="30dp"
+                android:paddingRight="30dp"
+                android:showDividers="middle"></LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <ScrollView
+        android:id="@+id/ProfileView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <!--Start of Profile Layout-->
+        <LinearLayout
+            android:id="@+id/ProfileLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="50dp"
+            android:paddingRight="50dp">
+
+            <TextView
+                android:id="@+id/ProfileTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="40dp"
+                android:fontFamily="sans-serif-black"
+                android:gravity="center"
+                android:text="Profile View"
+                android:textColor="@color/text_primary"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/ProfileSubtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="4dp"
+                android:fontFamily="sans-serif-medium"
+                android:text="All your information in one place."
+                android:textColor="@color/text_secondary"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ProfileTitle" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingTop="25sp"
+                android:paddingBottom="10sp"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/EditProfileName"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:background="@drawable/round_background_light"
+                    android:ems="10"
+                    android:paddingStart="50sp"
+                    android:paddingTop="25sp"
+                    android:paddingEnd="25sp"
+                    android:paddingBottom="10sp"
+                    android:text=""
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/text_primary"
+                    android:textColorHint="@color/text_secondary"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginTop="10dp"
+                    android:text="NAME"
+                    android:textColor="@color/text_primary"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="16dp"
+                    android:scaleX="0.8"
+                    android:scaleY="0.8"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_baseline_person_24"
+                    app:tint="@color/text_secondary" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingBottom="10sp">
+
+                <TextView
+                    android:id="@+id/Email"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:background="@drawable/round_background_light"
+                    android:ems="10"
+                    android:inputType="date"
+                    android:paddingStart="50sp"
+                    android:paddingTop="25sp"
+                    android:paddingBottom="10sp"
+                    android:text=""
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/text_primary"
+                    android:textColorHint="@color/text_secondary"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginTop="10dp"
+                    android:text="EMAIL"
+                    android:textColor="@color/text_primary"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="16dp"
+                    android:scaleX="0.8"
+                    android:scaleY="0.8"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_outline_email_24"
+                    app:tint="@color/text_secondary" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:paddingBottom="10sp">
+
+                    <TextView
+                        android:id="@+id/Gender"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:background="@drawable/round_background_light"
+                        android:ems="10"
+                        android:inputType="date"
+                        android:paddingStart="50sp"
+                        android:paddingTop="25sp"
+                        android:paddingBottom="10sp"
+                        android:text=""
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/text_primary"
+                        android:textColorHint="@color/text_secondary"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="GENDER"
+                        android:textColor="@color/text_primary"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/Gender"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/EditProfileGender"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:scaleX="0.8"
+                        android:scaleY="0.8"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/Gender"
+                        app:layout_constraintTop_toBottomOf="@+id/textView2"
+                        app:srcCompat="@drawable/ic_icons8_male_120__xxxhdpi_"
+                        app:tint="@color/accent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="0" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent"
+                    android:paddingBottom="10sp">
+
+                    <TextView
+                        android:id="@+id/EditProfileInstagram"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:background="@drawable/round_background_light"
+                        android:ems="10"
+                        android:inputType="date"
+                        android:paddingStart="50sp"
+                        android:paddingTop="25sp"
+                        android:paddingRight="25sp"
+                        android:paddingBottom="10sp"
+                        android:text=""
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/text_primary"
+                        android:textColorHint="@color/text_secondary"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="50dp"
+                        android:layout_marginTop="10dp"
+                        android:text="INSTAGRAM"
+                        android:textColor="@color/text_primary"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="16dp"
+                        android:scaleX="0.8"
+                        android:scaleY="0.8"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_baseline_person_search_24"
+                        app:tint="@color/text_secondary" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </LinearLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"
+                android:paddingBottom="10sp"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/Biography"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_background_light"
+                    android:ems="10"
+                    android:gravity="start"
+                    android:imeOptions="actionDone"
+                    android:lines="5"
+                    android:nextFocusRight="@id/AuthCreateInstagram"
+                    android:nextFocusDown="@id/AuthCreateInstagram"
+                    android:nextFocusForward="@id/AuthCreateInstagram"
+                    android:paddingStart="50sp"
+                    android:paddingTop="25sp"
+                    android:paddingBottom="10sp"
+                    android:text=""
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/text_primary"
+                    android:textColorHint="@color/text_secondary"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginTop="10dp"
+                    android:text="BIOGRAPHY"
+                    android:textColor="@color/text_primary"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="16dp"
+                    android:paddingLeft="4sp"
+                    android:paddingRight="4sp"
+                    android:scaleX="1.15"
+                    android:text="+"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/EditProfileAlcoholic"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checkable="true"
+                    android:clickable="false"
+                    android:focusable="false"
+                    app:checkedIconVisible="false"
+                    app:chipBackgroundColor="@color/chip_color_list"
+                    app:chipIcon="@drawable/ic_round_local_drink_24"
+                    app:chipSurfaceColor="@color/text_secondary"
+                    app:textEndPadding="0dp"
+                    app:textStartPadding="0dp" />
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/EditProfileSmoker"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checkable="true"
+                    android:clickable="false"
+                    android:focusable="false"
+                    app:checkedIconVisible="false"
+                    app:chipBackgroundColor="@color/chip_color_list"
+                    app:chipIcon="@drawable/ic_baseline_smoking_rooms_24"
+                    app:chipSurfaceColor="@color/text_secondary"
+                    app:textEndPadding="0dp"
+                    app:textStartPadding="0dp" />
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/EditProfileSocial"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checkable="true"
+                    android:clickable="false"
+                    android:focusable="false"
+                    app:checkedIconVisible="false"
+                    app:chipBackgroundColor="@color/chip_color_list"
+                    app:chipIcon="@drawable/ic_baseline_sports_kabaddi_24"
+                    app:textEndPadding="0dp"
+                    app:textStartPadding="0dp" />
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/EditProfileNightOwl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checkable="true"
+                    android:clickable="false"
+                    android:focusable="false"
+                    app:checkedIconVisible="false"
+                    app:chipBackgroundColor="@color/chip_color_list"
+                    app:chipIcon="@drawable/ic_baseline_nights_stay_24"
+                    app:textEndPadding="0dp"
+                    app:textStartPadding="0dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/EditProfileSubmit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="EditProfile"
+                    android:text="EDIT PROFILE"
+                    android:textColor="@color/background"
+                    app:chipBackgroundColor="@color/accent_tertiary"
+                    app:chipIcon="@drawable/ic_baseline_create_24"
+                    app:chipIconTint="@color/background"
+                    app:chipMinHeight="40dp"
+                    app:iconStartPadding="7dp"
+                    app:textEndPadding="10dp" />
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:id="@+id/AuthLogout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:backgroundTint="@color/accent"
+                    android:focusable="false"
+                    android:fontFamily="sans-serif-medium"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="10dp"
+                    android:paddingRight="20dp"
+                    android:paddingBottom="10dp"
+                    android:text="Log Out"
+                    android:textColor="@color/background"
+                    app:cornerRadius="70sp" />
+
+            </LinearLayout>
+
+            <Switch
+                android:id="@+id/ThemeSwitch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="Night Mode"
+                android:textColor="@color/text_secondary"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+    <!--End of Profile View-->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageButton
+        android:id="@+id/DiscoverTab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:paddingLeft="30sp"
+        android:paddingTop="10sp"
+        android:paddingRight="30sp"
+        android:paddingBottom="20sp"
+        android:src="@drawable/ic_baseline_track_changes_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/InboxTab"
+        app:layout_constraintStart_toStartOf="parent"
+        app:tint="@color/accent_tertiary" />
+
+    <ImageButton
+        android:id="@+id/InboxTab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:paddingLeft="30sp"
+        android:paddingTop="10sp"
+        android:paddingRight="30sp"
+        android:paddingBottom="20sp"
+        android:src="@drawable/ic_baseline_inbox_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/NotificationChip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="20dp"
+        android:clickable="false"
+        android:focusable="false"
+        android:text="0"
+        android:visibility="gone"
+        app:chipBackgroundColor="@color/accent_secondary"
+        app:chipEndPadding="0dp"
+        app:chipMinHeight="24dp"
+        app:chipStartPadding="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/constraintLayout3"
+        app:layout_constraintEnd_toEndOf="@+id/InboxTab"
+        app:textEndPadding="8dp" />
+
+    <ImageButton
+        android:id="@+id/ProfileTab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:paddingLeft="30sp"
+        android:paddingTop="10sp"
+        android:paddingRight="30sp"
+        android:paddingBottom="20sp"
+        android:src="@drawable/ic_baseline_person_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/InboxTab" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
